@@ -211,7 +211,7 @@ lazy val docs =
   project.settings(librarySettings, macroAnnotationSettings).dependsOn(web, hot, docsMacros, history)
 
 ThisBuild / updateIntellij := {}
-val intelliJVersion = "231.8109.175" // 2023.1
+val intelliJVersion = "242.20224.300" // 2023.2
 
 lazy val coreIntellijSupport = project.settings(
   org.jetbrains.sbtidea.Keys.buildSettings :+ (
