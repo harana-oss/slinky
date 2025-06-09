@@ -95,7 +95,7 @@ abstract class ExternalComponentNoPropsWithAttributesWithRefType[E <: TagElement
   val component: String | js.Object
 
   def apply(mods: TagMod[E]*): BuildingComponent[E, R] =
-    new BuildingComponent(js.Array(component.asInstanceOf[js.Any], js.Dictionary.empty)).apply(mods: _*)
+    new BuildingComponent(js.Array(component.asInstanceOf[js.Any], js.Dictionary.empty)).apply(mods*)
 
   def withKey(key: String): BuildingComponent[E, R] =
     new BuildingComponent(js.Array(component.asInstanceOf[js.Any], js.Dictionary.empty)).withKey(key)
