@@ -85,7 +85,7 @@ object ExternalComponent {
 
         val basicApply = q"""
           def apply[..$tparams](...$paramss): _root_.slinky.core.BuildingComponent[$elementType, $refType] =
-            this.apply(Props.apply(..$allParamNames))
+            this.applyProps(Props.apply(..$allParamNames))
               .asInstanceOf[_root_.slinky.core.BuildingComponent[$elementType, $refType]]
         """
 

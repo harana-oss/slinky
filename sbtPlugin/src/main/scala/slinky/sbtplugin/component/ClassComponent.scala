@@ -195,14 +195,14 @@ object ClassComponent {
           Seq(q"""
             def apply[..$typeParamClause](...$termParamClauses)($processedChildren):
               _root_.slinky.core.KeyAndRefAddingStage[Def] = {
-              this.apply(Props.apply[..$typeArgClause](..$allArgsInOrder))
+              this.applyProps(Props.apply[..$typeArgClause](..$allArgsInOrder))
             }
           """)
         else
           Seq(q"""
             def apply(...$termParamClauses)($processedChildren):
               _root_.slinky.core.KeyAndRefAddingStage[Def] = {
-              this.apply(Props.apply(..$allArgsInOrder))
+              this.applyProps(Props.apply(..$allArgsInOrder))
             }
           """)
 
@@ -217,14 +217,14 @@ object ClassComponent {
           Seq(q"""
             def apply[..$typeParamClause](...$termParamClauses):
               _root_.slinky.core.KeyAndRefAddingStage[Def] = {
-              this.apply(Props.apply[..$typeArgClause](..$args))
+              this.applyProps(Props.apply[..$typeArgClause](..$args))
             }
           """)
         else
           Seq(q"""
             def apply(...$termParamClauses):
               _root_.slinky.core.KeyAndRefAddingStage[Def] = {
-              this.apply(Props.apply(..$args))
+              this.applyProps(Props.apply(..$args))
             }
           """)
     }

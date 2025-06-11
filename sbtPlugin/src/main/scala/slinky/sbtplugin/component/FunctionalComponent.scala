@@ -63,7 +63,7 @@ object FunctionalComponent {
 
       case q"type Props = Unit" =>
         Seq(
-          q"def apply(): _root_.slinky.core.KeyAddingStage = component.apply(())",
+          q"def apply(): _root_.slinky.core.KeyAddingStage = component.applyProps(())",
         )
 
       case _ =>
